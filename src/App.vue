@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png" style="display:none;">
+    {{ message }}
     <router-view/>
   </div>
 </template>
@@ -8,6 +9,11 @@
 <script>
 export default {
   name: 'App',
+  data() {
+    return {
+      message: 'Hello Vue!',
+    };
+  },
 };
 </script>
 
