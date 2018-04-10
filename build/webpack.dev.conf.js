@@ -53,6 +53,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     }
   },
   plugins: [
+    // DefinePlugin 允许创建一个在编译时可以配置的全局常量
     new webpack.DefinePlugin({
       "process.env": require("../config/dev.env")
     }),
