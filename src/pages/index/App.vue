@@ -1,29 +1,44 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png" style="display:none;">
-    {{ message }}
-    <router-view/>
+  <div>
+    <!-- <naviWeb></naviWeb> -->
+    <div class="counter main_1000 clearfix">
+      <navigate></navigate>
+      <router-view></router-view>
+    </div>
   </div>
 </template>
-
 <script>
-export default {
-  name: 'App',
-  data() {
-    return {
-      message: 'Hello Vue!',
-    };
-  },
-};
-</script>
+// import naviWeb from './components/navi-web.vue';
+import navigate from '@/pages/index/components/navigate.vue';
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+require('@/pages/index/assets/style.css');
+
+export default {
+  name: 'app',
+  data() {
+    return {};
+  },
+  watch: {
+
+  },
+  methods: {
+
+  },
+  components: {
+    navigate
+    // naviWeb
+  },
+  // mounted(){
+  //   console.log('mounted', this.$route);
+  // },
+  // updated(){
+  //   this.moduleName = this.$route.name;
+  //   console.log('updated', this.$route);
+  // }
 }
+
+</script>
+<style>
+
+
 </style>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>税费计算器</title>
+	</head>
+	<link href="css/style.css" type="text/css" rel="stylesheet"/>
+	<body>
+		<div class="counter main_1000 clearfix">
+			<p class="banner_top">
+				<img src="images/banner_sma.jpg" alt=""/>
+			</p>
+			<!--tab切换-->
+			<div class="tab_list">
+				<ul class="clearfix">
+					<li>房贷计算器</li>
+					<li class="on">税费计算器</li>
+					<li>提前还贷计算器</li>
+					<li>公积金贷款额度查询</li>
+					<li>购房能力评估</li>
+					<li>装修贷款计算器</li>
+				</ul>
+			</div>
+			<table>
+				<tr>
+					<!--左侧列表-->
+					<td class="counter_list counter_list_width3">
+						<ul class="clearfix fl">
+							<li>
+								<span>房屋：</span>
+								<span class="fangshi"><i class="on"></i>新房</span>
+								<span class="fangshi"><i></i>二手房</span>
+							</li>
+							<li class="">
+								<span>房屋面积：</span>
+								<input value="" placeholder name=""/>
+								<i>平米</i>
+							</li>
+							<li class="">
+								<span>房屋单价：</span>
+								<input value="" placeholder name=""/>
+								<i>元/平米</i>
+							</li>
+							<li class="">
+								<span>房屋总价：</span>
+								<input value="" name=""/>
+								<i>万元</i>
+							</li>
+							<li>
+								<span>计征方式：</span>
+								<div class="clearfix">
+									<p class="select">
+										<input type="" value="总价" name="" readonly="readonly"/>
+										<i></i>
+									</p>
+									<ul class="option none">
+										<li>总价</li>
+										<li>差价</li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<span>房产性质：</span>
+								<div class="clearfix">
+									<p class="select">
+										<input type="" value="普通住宅" name="" readonly="readonly"/>
+										<i></i>
+									</p>
+									<ul class="option none">
+										<li>普通住宅</li>
+										<li>非普通住宅</li>
+										<li>经济适用房</li>
+									</ul>
+								</div>
+							</li>
+							<li class="mar_topsma">
+								<span>房产购置满5年：</span>
+								<span class="fangshi"><i class="on"></i>是</span>
+								<span class="fangshi"><i></i>否</span>
+							</li>
+							<li class="mar_topsma">
+								<span>买房家庭首次购房：</span>
+								<span class="fangshi"><i class="on"></i>是</span>
+								<span class="fangshi"><i></i>否</span>
+							</li>
+							<li class="mar_topsma">
+								<span>卖方家庭唯一住房：</span>
+								<span class="fangshi"><i class="on"></i>是</span>
+								<span class="fangshi"><i></i>否</span>
+							</li>
+							<li>
+								<span></span>
+								<span class="start">开始计算</span>
+								<span class="empty">清空重填</span>
+							</li>
+						</ul>
+					</td>
+					<!--中间竖线-->
+					<td class="counter_center">
+						<img src="images/center_line.jpg" alt=""/>
+					</td>
+					<!--右侧计算结果-->
+					<td class="counter_right counter_right_width3" valign="top">
+						<ul>
+							<li class="title"><h2>计算结果</h2></li>
+							<li class="clearfix">
+								<h3>房款总款：</h3>
+								<span class="on">1050000</span>
+								<i>元</i>
+							</li>
+							<li class="clearfix">
+								<h3>印花税：</h3>
+								<span class="on">14986</span>
+								<i>元</i>
+							</li>
+							<li class="clearfix">
+								<h3>公证费：</h3>
+								<span>245000</span>
+								<i>元</i>
+							</li>
+							<li class="clearfix">
+								<h3>契税：</h3>
+								<span>114000</span>
+								<i>元</i>
+							</li>
+							<li class="clearfix">
+								<h3>委托办理产权手续费：</h3>
+								<span>359000</span>
+								<i>元</i>
+							</li>
+							<li class="clearfix">
+								<h3>房屋买卖手续费：</h3>
+								<span>240</span>
+								<i>元</i>
+							</li>
+						</ul>
+						<p class="note">*以上结果仅供参考</p>
+					</td>
+					<!--右侧还未计算时-->
+					<td class="counter_right2 none">
+						<img src="images/jisuan_right.png" alt="" class="" />
+						<p>要贷款买房，赶紧算算吧！</p>
+					</td>
+
+				</tr>
+			</table>				
+		</div>
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js" ></script>
+	<script type="text/javascript" src="js/index.js" ></script>
+	</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>公积金贷款额度查询</title>
+</head>
+<link href="css/style.css" type="text/css" rel="stylesheet" />
+
+<body>
+  <div class="counter main_1000 clearfix">
+    <p class="banner_top">
+      <img src="images/banner_sma.jpg" alt="" />
+    </p>
+    <!--tab切换-->
+    <div class="tab_list">
+      <ul class="clearfix">
+        <li>房贷计算器</li>
+        <li>税费计算器</li>
+        <li>提前还贷计算器</li>
+        <li class="on">公积金贷款额度查询</li>
+        <li>购房能力评估</li>
+        <li>装修贷款计算器</li>
+      </ul>
+    </div>
+    <table>
+      <tr>
+        <!--左侧列表-->
+        <td class="counter_list counter_list_width4">
+          <ul class="clearfix fl">
+            <li class="">
+              <span><b>*</b>住房公积金个人月缴存额：</span>
+              <input value="" placeholder name="" />
+              <i>元</i>
+            </li>
+            <li class="">
+              <span><b>*</b>缴存比例：</span>
+              <input value="12" name="" />
+              <i>%</i>
+            </li>
+            <li class="">
+              <span>配偶住房公积金个人月缴存额：</span>
+              <input value="" placeholder name="" />
+              <i>元</i>
+            </li>
+            <li class="">
+              <span>缴存比例：</span>
+              <input value="" name="" />
+              <i>%</i>
+            </li>
+            <li class="">
+              <span><b>*</b>房屋评估价值或实际购房款：</span>
+              <input value="" placeholder name="" />
+              <i>元</i>
+            </li>
+            <li>
+              <span><b>*</b>房屋性质：</span>
+              <span class="fangshi"><i class="on"></i>政策性住房</span>
+              <span class="fangshi"><i></i>其他</span>
+            </li>
+            <li class="">
+              <span><b>*</b>贷款申请年限：</span>
+              <input value="" placeholder name="" />
+              <i>年</i>
+            </li>
+            <li class="zhushi">( 注：贷款期限最长可计算到借款人70周岁，同时不得超过30年。)</li>
+            <li>
+              <span><b>*</b>个人信用等级：</span>
+              <span class="fangshi"><i class="on"></i>AAA级</span>
+              <span class="fangshi"><i></i>AA级</span>
+              <span class="fangshi"><i></i>其他</span>
+            </li>
+            <li>
+              <span></span>
+              <span class="start">开始计算</span>
+              <span class="empty">清空重填</span>
+            </li>
+          </ul>
+        </td>
+        <!--中间竖线-->
+        <td class="counter_center">
+          <img src="images/center_line.jpg" alt="" />
+        </td>
+        <!--右侧计算结果-->
+        <td class="counter_right counter_right_width4" valign="top">
+          <ul>
+            <li class="title">
+              <h2>计算结果</h2></li>
+            <li class="clearfix">
+              <h3>您可以申请的最高贷款额度是 </h3>
+              <span class="on">1498600</span>
+              <i>万元</i>
+            </li>
+          </ul>
+          <p class="note">*以上结果仅供参考</p>
+        </td>
+        <!--右侧还未计算时-->
+        <td class="counter_right2 none">
+          <img src="images/jisuan_right.png" alt="" class="" />
+          <p>要贷款买房，赶紧算算吧！</p>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>购房能力评估</title>
+	</head>
+	<link href="css/style.css" type="text/css" rel="stylesheet"/>
+	<body>
+		<div class="counter main_1000 clearfix">
+			<p class="banner_top">
+				<img src="images/banner_sma.jpg" alt=""/>
+			</p>
+			<!--tab切换-->
+			<div class="tab_list">
+				<ul class="clearfix">
+					<li>房贷计算器</li>
+					<li>税费计算器</li>
+					<li>提前还贷计算器</li>
+					<li>公积金贷款额度查询</li>
+					<li class="on">购房能力评估</li>
+					<li>装修贷款计算器</li>
+				</ul>
+			</div>
+			<table>
+				<tr>
+					<!--左侧列表-->
+					<td class="counter_list counter_list_width2">
+						<ul class="clearfix fl">
+							<li class="">
+								<span>现持有资金：</span>
+								<input value="" placeholder name=""/>
+								<i>元</i>
+							</li>
+							<li class="zhushi">（包括现金、存款、有价证券和可以筹措到的资金总和） </li>
+							<li class="">
+								<span>现家庭月收入：</span>
+								<input value="" placeholder name=""/>
+								<i>元</i>
+							</li>
+							<li class="">
+								<span>家庭平均每月固定支出：</span>
+								<input value="" placeholder name=""/>
+								<i>元</i>
+							</li>
+							<li>
+								<span>您期望偿还贷款的年限：</span>
+								<div class="clearfix">
+									<p class="select">
+										<input type="" value="20年（240期）" name="" readonly="readonly"/>
+										<i></i>
+									</p>
+									<ul class="option none">
+										<li>20年（240期）</li>
+									</ul>
+								</div>
+							</li>
+							<li class="">
+								<span>您计划购买房屋的面积：</span>
+								<input value="" name=""/>
+								<i>平方米</i>
+							</li>
+							<li>
+								<span> </span>
+								<span class="start">开始计算</span>
+								<span class="empty">清空重填</span>
+							</li>
+						</ul>
+					</td>
+					<!--中间竖线-->
+					<td class="counter_center">
+						<img src="images/center_line.jpg" alt=""/>
+					</td>
+					<!--右侧计算结果-->
+					<td class="counter_right counter_right_width2" valign="top">
+						<ul>
+							<li class="title"><h2>计算结果</h2></li>
+							<li class="clearfix">
+								<h3>您可以购买的房屋总价为 </h3>
+								<span class="on">1050000</span>
+								<i>万元</i>
+							</li>
+							<li class="clearfix">
+								<h3>您可以购买的房屋单价为 </h3>
+								<span class="on">14986</span>
+								<i>元/平方</i>
+							</li>
+						</ul>
+						<p class="note">*以上结果仅供参考</p>
+					</td>
+					<!--右侧还未计算时-->
+					<td class="counter_right2 none">
+						<img src="images/jisuan_right.png" alt="" class="" />
+						<p>要贷款买房，赶紧算算吧！</p>
+					</td>
+
+				</tr>
+			</table>				
+		</div>
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js" ></script>
+	<script type="text/javascript" src="js/index.js" ></script>
+	</body>
+</html>

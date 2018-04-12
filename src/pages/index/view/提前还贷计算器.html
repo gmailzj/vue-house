@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>提前还贷计算器</title>
+	</head>
+	<link href="css/style.css" type="text/css" rel="stylesheet"/>
+	<body>
+		<div class="counter main_1000 clearfix">
+			<p class="banner_top">
+				<img src="images/banner_sma.jpg" alt=""/>
+			</p>
+			<!--tab切换-->
+			<div class="tab_list">
+				<ul class="clearfix">
+					<li>房贷计算器</li>
+					<li>税费计算器</li>
+					<li class="on">提前还贷计算器</li>
+					<li>公积金贷款额度查询</li>
+					<li>购房能力评估</li>
+					<li>装修贷款计算器</li>
+				</ul>
+			</div>
+			<table>
+				<tr>
+					<!--左侧列表-->
+					<td class="counter_list counter_list_width3">
+						<ul class="clearfix fl">
+							<li>
+								<span>还款类型：</span>
+								<div class="clearfix">
+									<p class="select">
+										<input type="" value="商业贷款" name="" readonly="readonly"/>
+										<i></i>
+									</p>
+									<ul class="option none">
+										<li>商业贷款</li>
+										<li>公积金贷款</li>
+										<li>组合型贷款</li>	
+									</ul>
+								</div>
+							</li>
+							<li class="">
+								<span>原房贷金额：</span>
+								<input value="" name=""/>
+								<i>万元</i>
+							</li>
+							<li>
+								<span>原房贷年限：</span>
+								<div class="clearfix">
+									<p class="select">
+										<input type="" value="20年（240期）" name="" readonly="readonly"/>
+										<i></i>
+									</p>
+									<ul class="option none">
+										<li>20年（240期）</li>
+									</ul>
+								</div>
+							</li>
+							<li class="">
+								<span>利率：</span>
+								<div class="clearfix">
+									<p class="select">
+										<input type="" value="15年10月24日基准利率（1.1倍）" name="" readonly="readonly"/>
+										<i></i>
+									</p>
+									<ul class="option none">
+										<li>15年10月24日基准利率（1.1倍）</li>
+									</ul>
+								</div>
+							</li>
+							<li class="date_select clearfix">
+								<span>第一次还款时间：</span>
+								<div class="date_right">
+									<p class="select">
+										<input type="" value="2017年" name="" readonly="readonly"/>
+										<i></i>
+									</p>
+									<ul class="option none">
+										<li>2017年</li>
+									</ul>
+								</div>
+								<div>
+									<p class="select">
+										<input type="" value="8月" name="" readonly="readonly"/>
+										<i></i>
+									</p>
+									<ul class="option none">
+										<li>8月</li>
+									</ul>
+								</div>
+							</li>
+							<li class="date_select clearfix">
+								<span>预计提前还款时间：</span>
+								<div class="date_right">
+									<p class="select">
+										<input type="" value="2017年" name="" readonly="readonly"/>
+										<i></i>
+									</p>
+									<ul class="option none">
+										<li>2017年</li>
+									</ul>
+								</div>
+								<div>
+									<p class="select">
+										<input type="" value="8月" name="" readonly="readonly"/>
+										<i></i>
+									</p>
+									<ul class="option none">
+										<li>8月</li>
+									</ul>
+								</div>
+							</li>
+							<li class="way_block">
+								<span>还款方式：</span>
+								<p class="fangshi"><i class="on"></i>一次性还清</p>
+								<p class="fangshi"><i></i>部分提前还款<input value="" name=""/><i class="position_wen">万元</i></p>
+							</li>
+							<li class="way_block">
+								<span>处理方式：</span>
+								<p class="fangshi"><i class="on"></i>缩短还款期限，月还款额基本不变</p>
+								<p class="fangshi"><i></i>减少月还款额，还款期限不变</p>
+							</li>
+							<li>
+								<span> </span>
+								<span class="start">开始计算</span>
+								<span class="empty">清空重填</span>
+							</li>
+						</ul>
+					</td>
+					<!--中间竖线-->
+					<td class="counter_center">
+						<img src="images/center_line.jpg" alt=""/>
+					</td>
+					<!--右侧计算结果-->
+					<td class="counter_right counter_right_width5" valign="top">
+						<ul>
+							<li class="title"><h2>计算结果</h2></li>
+							<li class="clearfix">
+								<h3>原月还款额：</h3>
+								<span class="on">1050000</span>
+								<i>元</i>
+							</li>
+							<li class="clearfix">
+								<h3>原最后还款期：</h3>
+								<span class="on">2018</span>
+								<i></i>
+							</li>
+							<li class="clearfix">
+								<h3>已还款总额：</h3>
+								<span>245000</span>
+								<i>元</i>
+							</li>
+							<li class="clearfix">
+								<h3>已还利息额：</h3>
+								<span>114000</span>
+								<i>元</i>
+							</li>
+							<li class="clearfix">
+								<h3>该月一次还款额：</h3>
+								<span>359000</span>
+								<i>元</i>
+							</li>
+							<li class="clearfix">
+								<h3>下月起月还款额：</h3>
+								<span>240</span>
+								<i>元</i>
+							</li>
+							<li class="clearfix">
+								<h3>节省利息支出：</h3>
+								<span>114000</span>
+								<i>元</i>
+							</li>
+							<li class="clearfix">
+								<h3>新的最后还款期：</h3>
+								<span>359000</span>
+								<i></i>
+							</li>
+							<li class="clearfix">
+								<h3>计算结果提示：</h3>
+								<span>240</span>
+								<i></i>
+							</li>
+						</ul>
+						<p class="note">*以上结果仅供参考</p>
+					</td>
+					<!--右侧还未计算时-->
+					<td class="counter_right2 none">
+						<img src="images/jisuan_right.png" alt="" class="" />
+						<p>要贷款买房，赶紧算算吧！</p>
+					</td>
+
+				</tr>
+			</table>				
+		</div>
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js" ></script>
+	<script type="text/javascript" src="js/index.js" ></script>
+	</body>
+</html>

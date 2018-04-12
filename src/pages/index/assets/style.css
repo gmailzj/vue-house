@@ -1,0 +1,553 @@
+/* CSS Document */
+/*预设*/
+html, body, div,span, applet, object, iframe, h1, h2, h3, h4, h5,h6, p, blockquote, pre, a, abbr, acronym, address,big, cite, code, del, dfn, em, img, ins, kbd, q,s, samp, small, strike, sub, sup, tt, var, b, u,i, center, dl, dt, dd, ol, ul, li, fieldset, form,label, legend, table, caption, tbody, tfoot,thead, tr, th, td, article, aside, canvas,details, embed, figure, figcaption, footer,header, hgroup, menu, nav, output, ruby, section,summary, time, mark, audio, video{
+	margin: 0;
+	padding: 0;
+	outline: none;
+}
+/*@font-face{
+	font-family:"兰亭";
+	src:url(../fonts/gbk.TTF);
+}*/
+html,body{
+	font-family:"Microsoft YaHei";
+	font-size: 14px;
+	width: 100%;
+	position:relative;
+	background:#fff;
+}
+body{
+	overflow-y: scroll;
+}
+i{
+	font-style: normal;
+}
+a{
+	text-decoration: none;
+}
+ul li{
+	list-style: none;
+}
+img{
+	border: none;
+}
+input,select{
+	border:none;
+	outline: none;
+	font-family: "Microsoft YaHei";
+}
+::-ms-clear,
+::-ms-reveal
+{
+display:none;
+}
+.clearfix:after{
+	content: ".";
+	display: block;
+	height: 0;
+	visibility: hidden;
+	clear: both;
+}
+.clearfix{
+	zoom: 1;
+}
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+.none{
+	display:none;
+}
+b{
+    color: #d64242;
+	margin-right:5px;
+    text-align: left;
+}
+.main_1000{
+	width:1000px;
+	margin:auto;
+}
+.banner_top{
+	margin-top:20px;
+}
+.banner_top img{
+	display:block;
+	width:100%;
+}
+.tab_list{
+	width:100%;
+	height:56px;
+	border-bottom:2px solid #ebebeb;
+	margin-top:10px;
+}
+.tab_list ul{
+	height:56px;
+	line-height:55px;
+}
+.tab_list li{
+	font-size:15px;
+	color:#83868f;
+	float:left;
+	width: 166.6px;
+	font-weight: bold;
+	text-align: center;
+}
+.tab_list li.on{
+	color:#d64242;
+	border-bottom:3px solid #d64242;
+}
+/*左侧列表*/
+.counter_list{
+	width:630px;
+	cursor: pointer;
+}
+.counter_list li{
+	float:left;
+	width:572px;
+	margin-top:26px;
+	position:relative;
+}
+.counter_list li.mar_topsma{
+	margin-top:16px;
+}
+.counter_list li>span{
+	float:left;
+	height:44px;
+	line-height:44px;
+	color:#383e4b;
+	margin-right:28px;
+	text-align:right;
+	font-weight:bold;
+}
+.counter_list li div{
+	position:relative;
+	float:left;
+}
+.counter_list input{
+	float:left;
+	height:44px;
+	line-height:44px;
+	color:#565c67;
+	font-size:14px;
+	background:#f5f5f6;
+	border-radius:2px;
+	text-indent:20px;
+}
+.select{
+	float:left;
+	position:relative;
+	height:44px;
+}
+.color_hui input{
+	color:#b3b6be;
+}
+
+.counter_list li .select i{
+	position:absolute;
+	background:url(./icon_jiantou.png) no-repeat;
+	width:7px;
+	height:5px;
+	display:block;
+	top:20px;
+	right:20px;
+}
+.counter_list li ul.option{
+	float:left;
+	border:1px solid #ebebeb;
+	position:absolute;
+	top:44px;
+	left:0;
+	z-index:10;
+	background:#fff;
+}
+.counter_list li ul.option li{
+	margin:0;
+	text-indent:20px;
+	line-height:44px;
+	color:#b3b6be;
+}
+.counter_list li ul.option li.hover, .counter_list li ul.option li:hover{
+	background:#f5f5f6;
+	color:#565c67;
+}
+
+.counter_list li>i{
+	color:#b3b6be;
+	position:absolute;
+	right:15px;
+	top:15px;
+}
+.counter_list li.money_rate div{
+	width:300px;
+	margin-right:20px;
+}
+.counter_list li.money_rate .select,.counter_list li.money_rate .select input,.counter_list li.money_rate ul.option,.counter_list li.money_rate ul.option li{
+	width:300px;
+}
+.counter_list li.money_rate>input{
+	width:150px;
+}
+.counter_list li .fangshi{
+	color:#565c67;
+	text-align:left;
+	font-weight:normal;
+	width:auto;
+	margin-right:32px;
+	float:left;
+	position:relative;
+	text-indent:28px;
+}
+.counter_list li .fangshi i{
+	background:url(./no_icon.png) no-repeat;
+	display:block;
+	width:16px;
+	height:16px;
+	background-size:100% 100%;
+	position:absolute;
+	left:0;
+	top:14px;
+}
+.counter_list li .fangshi i.on{
+	background:url(./on_icon.png) no-repeat;
+}
+.counter_list li span.start{
+	width:166px;
+	height:52px;
+	line-height:52px;
+	border-radius:2px;
+	background:#d64242;
+	text-align:center;
+	color:#fff;
+	float:left;
+	font-size:16px;
+	font-weight: bold;
+	margin-right:12px;
+}
+.counter_list li span.empty{
+	width:166px;
+	height:52px;
+	margin-right:0;
+	line-height:52px;
+	border-radius:2px;
+	background:#f5f5f6;
+	text-align:center;
+	color:#b3b6be;
+	float:left;
+	font-size:16px;
+	font-weight: bold;
+	margin-right:0;
+}
+/*不同的宽度*/
+/*4字*/
+.counter_list_width1 li span{
+	width:72px;
+}
+.counter_list_width1 li div,.counter_list_width1 input,.counter_list_width1 .select,.counter_list_width1 li ul.option,.counter_list_width1 li ul.option li{
+	width:470px;
+}
+
+/*购房能力评估宽度*/
+.counter_list_width2 li span{
+	width:155px;
+}
+.counter_list_width2 li div,.counter_list_width2 input,.counter_list_width2 .select,.counter_list_width2 li ul.option,.counter_list_width2 li ul.option li{
+	width:386px;
+}
+
+/*税费计算器宽度*/
+.counter_list_width3 li span{
+	width:128px;
+}
+.counter_list_width3 li div,.counter_list_width3 input,.counter_list_width3 .select,.counter_list_width3 li ul.option,.counter_list_width3 li ul.option li{
+	width:414px;
+}
+/*公积金贷款*/
+.counter_list_width4 li span{
+	width:198px;
+}
+.counter_list_width4 li div,.counter_list_width4 input,.counter_list_width4 .select,.counter_list_width4 li ul.option,.counter_list_width4 li ul.option li{
+	width:343px;
+}
+/*装修贷款*/
+.counter_list_width6 li span{
+	width:82px;
+}
+.counter_list_width6 li div,.counter_list_width6 input,.counter_list_width6 .select,.counter_list_width6 li ul.option,.counter_list_width6 li ul.option li{
+	width:460px;
+}
+/*6字*/
+.counter_list_width5 li span{
+	width:102px;
+}
+.counter_list_width5 li div,.counter_list_width5 input,.counter_list_width5 .select,.counter_list_width5 li ul.option,.counter_list_width5 li ul.option li{
+	width:440px;
+}
+.counter_list_width5 li.money_rate div{
+	width:280px;
+	margin-right:20px;
+}
+.counter_list_width5 li.money_rate .select,.counter_list_width5 li.money_rate .select input,.counter_list_width5 li.money_rate ul.option,.counter_list_width5 li.money_rate ul.option li{
+	width:280px;
+}
+.counter_list_width5 li.money_rate>input{
+	width:140px;
+}
+/*5字*/
+.counter_list_width7 li span{
+	width:86px;
+}
+.counter_list_width7 li div,.counter_list_width7 input,.counter_list_width7 .select,.counter_list_width7 li ul.option,.counter_list_width7 li ul.option li{
+	width:455px;
+}
+.counter_list_width7 li.money_rate div{
+	width:280px;
+	margin-right:20px;
+}
+.counter_list_width7 li.money_rate .select,.counter_list_width7 li.money_rate .select input,.counter_list_width7 li.money_rate ul.option,.counter_list_width7 li.money_rate ul.option li{
+	width:280px;
+}
+.counter_list_width7 li.money_rate>input{
+	width:155px;
+}
+
+
+
+
+/*中间分线*/
+.counter_center{
+	width:55px;
+	border-left:1px solid #ececec;
+}
+.counter_center img{
+	margin-left:-1px;
+}
+/*右侧结果*/
+.counter_right li{
+	margin-top:22px;
+	height:32px;
+	line-height:32px;
+}
+.counter_right li.title{
+	margin-top:32px;
+}
+.counter_right h2{
+	width:110px;
+	font-size:15px;
+	color:#333333;
+	font-weight:bold;
+}
+.counter_right h3{
+	font-weight:bold;
+	text-align:right;
+	color:#383e4b;
+	float:left;
+	font-size:14px;
+}
+.counter_right span{
+	color:#3c3f46;
+	font-size:16px;
+	font-family: "Microsoft YaHei";
+
+	font-weight:bold;
+	float:left;
+}
+.counter_right span.on{
+	color:#d64242;
+}
+.counter_right i{
+	color:#565c67;
+	float:left;
+	font-size:14px;
+}
+.note{
+	color:#b3b6be;
+	margin-top:60px;
+}
+/*未计算图片*/
+.counter_right2{
+	padding-left:40px;
+}
+.counter_right2 p{
+	color:#b3b6be;
+	margin-top:40px;
+	text-align:center;
+}
+/*右侧不同的宽度*/
+/*房贷*/
+.counter_right_width1 h3{
+	width:72px;
+	margin-right:38px;
+}
+.counter_right_width1 span{
+	width:108px;
+}
+/*购房能力*/
+.counter_right_width2 h3{
+	width:155px;
+	margin-right:5px;
+}
+.counter_right_width2 span{
+  width: 90px;
+  margin-right: 5px;
+}
+/*税费*/
+.counter_right_width3 h3{
+	width:144px;
+	margin-right:29px;
+}
+.counter_right_width3 span{
+	width:80px;
+}
+/*公积金*/
+.counter_right_width4 h3{
+	width:190px;
+	margin-right:5px;
+	text-align:left;
+}
+.counter_right_width4 span{
+	width:80px;
+}
+/*提前还贷*/
+.counter_right_width5 h3{
+	width:124px;
+	margin-right:29px;
+}
+.counter_right_width5 span{
+	width:100px;
+}
+
+
+/*其余页面其他样式*/
+/*购房能力评估*/
+.counter_list li.zhushi{
+	color:#b3b6be;
+	text-align:right;
+	margin-top:24px;
+}
+/*提前还贷*/
+.counter_list li.date_select div,.counter_list li.date_select .select,.counter_list li.date_select .select input,.counter_list li.date_select ul.option,.counter_list li.date_select ul.option li{
+	width:200px;
+}
+.date_right{
+	margin-right:14px;
+}
+.counter_list li.way_block .fangshi{
+	color:#565c67;
+	text-align:left;
+	font-weight:normal;
+	float:none;
+	width:414px;
+	position:relative;
+	text-indent:28px;
+	height:44px;
+	margin-left:156px;
+	line-height:44px;
+}
+.fangshi input{
+	width:280px;
+	float:none;
+	margin-left:20px;
+}
+.counter_list li .fangshi i.position_wen{
+	background:none;
+	left:auto;
+	width:auto;
+	height:auto;
+	margin-right:0;
+	color:#b3b6be;
+	position:absolute;
+	right:15px;
+	top:0px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{-webkit-appearance: none !important;}
+input[type="number"]{-moz-appearance: none !important;}
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(50px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@-webkit-keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(50px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.fadeInRight {
+  animation: fadeInRight 1s both;
+  -webkit-animation: fadeInRight 1s both;
+}
+::-webkit-input-placeholder { color:#bbb;}
+:-moz-placeholder {color:#bbb;}
+::-moz-placeholder {color:#bbb;}
+:-ms-input-placeholder {color:#bbb;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -19,6 +19,7 @@ module.exports = {
   // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
   // 扩展一个流行的风格指南
   extends: ["plugin:vue/essential", "airbnb-base"],
+  // extends: ["airbnb-base"],
   // required to lint *.vue files
   plugins: ["vue"],
   // check if imports actually resolve
@@ -31,11 +32,51 @@ module.exports = {
   },
   // add your custom rules here
   rules: {
+    "new-cap":0,
+    "vue/require-valid-default-prop":0,
+    "no-shadow-restricted-names":0,
+    "no-useless-escape":0,
+    "no-mixed-spaces-and-tabs":0,
+    "operator-assignment":0,
+    "no-sequences":0,
+    "no-unused-expressions":0,
+    "no-fallthrough":0,
+    "no-cond-assign":0,
+    "no-array-constructor":0,
+    "no-useless-concat":0,
+    "no-var":0,
+    "brace-style":"off",
+    "no-redeclare":"off",
+    "vars-on-top":"off",
+    "no-alert":"off",
+    "no-restricted-properties":"off",
+    "one-var":"off",
+    "default-case":"off",
+    "camelcase":"off",
+    "max-len":"off",
+    "eqeqeq":"off",
+    "no-undef":"off",
+    "radix":"off",
+    "block-scoped-var":"off",
+    "no-tabs":"off",
+    "space-before-function-paren":"off",
+    "no-plusplus": "off",
+    "semi-spacing": "off",
+    "no-plusplus":"off",
+    "no-mixed-operators":"off",
+    "indent":"off",
+    "global-require":"off",
+    "object-curly-spacing":"off",
+    "eol-last":"off",
+    "semi":"off",
+    "key-spacing":"off",
+    "arrow-spacing":"off",
+    "no-unused-vars":"off",
     "comma-dangle": ["off", "never"],
     "no-console": "off",
     quotes: ["off", "double"],
-    indent: ["error", 2],
-    "no-use-before-define": "warn",
+    indent: ["off", 2],
+    "no-use-before-define": "off",
     "object-shorthand": "off",
     "consistent-return": "off",
     "func-names": ["error", "never"],
@@ -44,9 +85,12 @@ module.exports = {
     "prefer-const": "off",
     "no-shadow": "off",
     "prefer-template": "off",
+    "import/prefer-default-export":0,
+    "import/first":"off",
+    "vue/require-v-for-key":"off",
     // don't require .vue extension when importing
     "import/extensions": [
-      "error",
+      "off",
       "always",
       {
         js: "never",
@@ -56,7 +100,7 @@ module.exports = {
     // disallow reassignment of function parameters
     // disallow parameter object manipulation except for specific exclusions
     "no-param-reassign": [
-      "error",
+      "off",
       {
         props: true,
         ignorePropertyModificationsFor: [
@@ -68,7 +112,7 @@ module.exports = {
     ],
     // allow optionalDependencies
     "import/no-extraneous-dependencies": [
-      "error",
+      "off",
       {
         optionalDependencies: ["test/unit/index.js"]
       }

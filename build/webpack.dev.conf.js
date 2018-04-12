@@ -111,7 +111,7 @@ module.exports = new Promise((resolve, reject) => {
       // devWebpackConfig.plugins = devWebpackConfig.plugins.concat(
       //   utils.htmlPlugin()
       // );
-      console.log(util.inspect(devWebpackConfig.plugins));
+      // console.log(util.inspect(devWebpackConfig.plugins));
 
       resolve(devWebpackConfig);
     }
