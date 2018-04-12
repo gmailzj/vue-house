@@ -73,26 +73,26 @@ const webpackConfig = merge(baseWebpackConfig, {
     // you can customize output by editing /index.html
     // see https://github.com/ampedandwired/html-webpack-plugin
     // 对于在文件名中包含每次会随着编译而发生变化哈希的 webpack bundle 尤其有用
-    new HtmlWebpackPlugin({
-      // 生成html的名称
-      filename: config.build.index,
-      // 模板文件
-      template: "index.html",
-      // 这个配置项指js文件插入的位置 可以 true || 'head' || 'body' || false Inject all
-      inject: true,
-      minify: {
-        // 删去html中的注释项
-        removeComments: true,
-        // 折叠html中的空白字符
-        collapseWhitespace: true,
-        // 删除html属性中只有一个值的引号 <p class="foo-bar" title="blah blah">foo</p><p class=foo-bar title="blah blah">foo</p>
-        removeAttributeQuotes: true
-        // more options:
-        // https://github.com/kangax/html-minifier#options-quick-reference
-      },
-      // necessary to consistently work with multiple chunks via CommonsChunkPlugin
-      chunksSortMode: "dependency"
-    }),
+    // new HtmlWebpackPlugin({
+    //   // 生成html的名称
+    //   filename: config.build.index,
+    //   // 模板文件
+    //   template: "index.html",
+    //   // 这个配置项指js文件插入的位置 可以 true || 'head' || 'body' || false Inject all
+    //   inject: true,
+    //   minify: {
+    //     // 删去html中的注释项
+    //     removeComments: true,
+    //     // 折叠html中的空白字符
+    //     collapseWhitespace: true,
+    //     // 删除html属性中只有一个值的引号 <p class="foo-bar" title="blah blah">foo</p><p class=foo-bar title="blah blah">foo</p>
+    //     removeAttributeQuotes: true
+    //     // more options:
+    //     // https://github.com/kangax/html-minifier#options-quick-reference
+    //   },
+    //   // necessary to consistently work with multiple chunks via CommonsChunkPlugin
+    //   chunksSortMode: "dependency"
+    // }),
     // keep module.id stable when vendor modules does not change
     // 该插件会根据模块的相对路径生成一个四位数的hash作为模块id
     new webpack.HashedModuleIdsPlugin(),
@@ -139,7 +139,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         ignore: [".*"]
       }
     ])
-  ]
+  ].concat(utils.htmlPlugin())
 });
 
 if (config.build.productionGzip) {

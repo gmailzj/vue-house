@@ -6,6 +6,8 @@ const merge = require("webpack-merge");
 const path = require("path");
 const baseWebpackConfig = require("./webpack.base.conf");
 
+const util = require("util");
+
 // 插件：复制文件用到
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -29,12 +31,12 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   devServer: {
     clientLogLevel: "warning",
     historyApiFallback: {
-      rewrites: [
-        {
-          from: /.*/,
-          to: path.posix.join(config.dev.assetsPublicPath, "index.html")
-        }
-      ]
+      // rewrites: [
+      //   {
+      //     from: /.*/,
+      //     to: path.posix.join(config.dev.assetsPublicPath, "index.html")
+      //   }
+      // ]
     },
     hot: true,
     contentBase: false, // since we use CopyWebpackPlugin.
@@ -62,11 +64,11 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     new webpack.NoEmitOnErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
     // This will generate a file dist/index.html containing the following
-    new HtmlWebpackPlugin({
-      filename: "index.html",
-      template: "index.html",
-      inject: true
-    }),
+    // new HtmlWebpackPlugin({
+    //   filename: "index.html",
+    //   template: "index.html",
+    //   inject: true
+    // }),
     // copy custom static assets
     // 复制到static让用户通过webserver可以访问static文件
     new CopyWebpackPlugin([
@@ -103,8 +105,13 @@ module.exports = new Promise((resolve, reject) => {
           onErrors: config.dev.notifyOnErrors
             ? utils.createNotifierCallback()
             : undefined
-        })
+        }),
+        ...utils.htmlPlugin()
       );
+      // devWebpackConfig.plugins = devWebpackConfig.plugins.concat(
+      //   utils.htmlPlugin()
+      // );
+      console.log(util.inspect(devWebpackConfig.plugins));
 
       resolve(devWebpackConfig);
     }

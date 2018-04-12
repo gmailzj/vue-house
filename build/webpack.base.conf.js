@@ -28,9 +28,7 @@ module.exports = {
   context: path.resolve(__dirname, "../"),
 
   // 入口
-  entry: {
-    app: "./src/main.js"
-  },
+  entry: utils.entries(),
   // 输出
   output: {
     // 路径 配置为dist
