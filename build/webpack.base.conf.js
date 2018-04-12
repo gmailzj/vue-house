@@ -64,12 +64,18 @@ module.exports = {
       },
       {
         test: /\.js$/,
+        // This package allows transpiling JavaScript files using Babel and webpack.
         loader: "babel-loader",
+        exclude: /(node_modules)/,
         include: [
           resolve("src"),
           resolve("test"),
           resolve("node_modules/webpack-dev-server/client")
-        ]
+        ],
+        options: {
+          // 配置选项
+          // presets: ["babel-preset-env"]
+        }
       },
       {
         // url-loader 功能类似于 file-loader，但是在文件大小（单位 byte）低于指定的限制时，可以返回一个 DataURL base64
@@ -101,9 +107,11 @@ module.exports = {
   node: {
     // prevent webpack from injecting useless setImmediate polyfill because Vue
     // source contains it (although only uses it if it's native).
+    // 什么都不提供
     setImmediate: false,
     // prevent webpack from injecting mocks to Node native modules
     // that does not make sense for the client
+    // 提供空对象
     dgram: "empty",
     fs: "empty",
     net: "empty",
