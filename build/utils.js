@@ -45,8 +45,6 @@ exports.htmlPlugin = function() {
       chunks: ["manifest", "vendor", "main"],
       inject: true
     };
-    // console.dir(conf);
-    // console.log(process.env.NODE_ENV);
     if (process.env.NODE_ENV === "production") {
       conf = merge(conf, {
         minify: {
@@ -59,7 +57,6 @@ exports.htmlPlugin = function() {
     }
     arr.push(new HtmlWebpackPlugin(conf));
   });
-  console.log(arr);
   return arr;
 };
 
