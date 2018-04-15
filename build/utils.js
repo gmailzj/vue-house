@@ -42,7 +42,7 @@ exports.htmlPlugin = function() {
       // 文件名称
       filename: path.join(config.build.assetsRoot, filename + ".html"),
       // 页面模板需要加对应的js脚本，如果不加这行则每个页面都会引入所有的js脚本
-      chunks: ["manifest", "vendor", "main"],
+      chunks: ["manifest", "vendor", filename],
       inject: true
     };
     if (process.env.NODE_ENV === "production") {
@@ -62,9 +62,9 @@ exports.htmlPlugin = function() {
 
 exports.assetsPath = function(_path) {
   const assetsSubDirectory =
-    process.env.NODE_ENV === "production"
-      ? config.build.assetsSubDirectory
-      : config.dev.assetsSubDirectory;
+    process.env.NODE_ENV === "production" ?
+    config.build.assetsSubDirectory :
+    config.dev.assetsSubDirectory;
 
   return path.posix.join(assetsSubDirectory, _path);
 };
@@ -88,9 +88,9 @@ exports.cssLoaders = function(options) {
 
   // generate loader string to be used with extract text plugin
   function generateLoaders(loader, loaderOptions) {
-    const loaders = options.usePostCSS
-      ? [cssLoader, postcssLoader]
-      : [cssLoader];
+    const loaders = options.usePostCSS ?
+      [cssLoader, postcssLoader] :
+      [cssLoader];
 
     if (loader) {
       loaders.push({
@@ -119,7 +119,9 @@ exports.cssLoaders = function(options) {
     css: generateLoaders(),
     postcss: generateLoaders(),
     less: generateLoaders("less"),
-    sass: generateLoaders("sass", { indentedSyntax: true }),
+    sass: generateLoaders("sass", {
+      indentedSyntax: true
+    }),
     scss: generateLoaders("sass"),
     stylus: generateLoaders("stylus"),
     styl: generateLoaders("stylus")
