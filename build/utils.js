@@ -4,6 +4,7 @@ const config = require("../config");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const packageConfig = require("../package.json");
 
+// This is a glob implementation in JavaScript
 const glob = require("glob");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 // 取得相应的页面路径，因为之前的配置，所以是src文件夹下的pages文件夹
@@ -62,9 +63,9 @@ exports.htmlPlugin = function() {
 
 exports.assetsPath = function(_path) {
   const assetsSubDirectory =
-    process.env.NODE_ENV === "production" ?
-    config.build.assetsSubDirectory :
-    config.dev.assetsSubDirectory;
+    process.env.NODE_ENV === "production"
+      ? config.build.assetsSubDirectory
+      : config.dev.assetsSubDirectory;
 
   return path.posix.join(assetsSubDirectory, _path);
 };
@@ -88,9 +89,9 @@ exports.cssLoaders = function(options) {
 
   // generate loader string to be used with extract text plugin
   function generateLoaders(loader, loaderOptions) {
-    const loaders = options.usePostCSS ?
-      [cssLoader, postcssLoader] :
-      [cssLoader];
+    const loaders = options.usePostCSS
+      ? [cssLoader, postcssLoader]
+      : [cssLoader];
 
     if (loader) {
       loaders.push({
