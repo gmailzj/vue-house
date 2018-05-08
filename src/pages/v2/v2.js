@@ -42,6 +42,29 @@ Vue.config.keyCodes = {
 };
 Vue.config.keyCodes.f1 = 112;
 
+// 定义一个名为 button-counter 的新组件
+Vue.component("button-counter", {
+  data: function() {
+    return {
+      count: 0
+    };
+  },
+  template:
+    '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+});
+
+Vue.component("mycomponent", {
+  template: `<div>这是一个自定义组件</div>`,
+  data() {
+    return {
+      message: "hello world"
+    };
+  }
+});
+
+/* eslint-disable no-new */
+// new Vue({ el: "#components-demo" });
+
 /* eslint-disable no-new */
 new Vue({
   el: "#app",
