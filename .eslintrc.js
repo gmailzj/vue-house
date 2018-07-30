@@ -32,6 +32,7 @@ module.exports = {
     },
     // add your custom rules here
     rules: {
+        "arrow-parens": [2, "as-needed", { "requireForBlockBody": true }],
         "new-cap": 0,
         "vue/require-valid-default-prop": 0,
         "no-shadow-restricted-names": 0,
