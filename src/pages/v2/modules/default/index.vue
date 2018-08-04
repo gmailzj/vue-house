@@ -1,7 +1,10 @@
 <template>
   <div>
 
+    <router-link to="vuex">vuex</router-link>
     <button-counter></button-counter>
+
+    <p>{{ count }}</p>
     <!-- 绑定一个属性 -->
     <div v-bind:title="title"></div>
     <!-- 缩写 -->
@@ -100,11 +103,41 @@ export default {
       this.message = this.message.split('').reverse().join('')
     }
   },
+  computed: {
+    count() {
+      return this.$store.state.count;
+    }
+  },
   created() {
+    console.log("component created");
     console.log(this.$store.state.count)
     this.$store.commit('increment');
     console.log(this.$store.state.count)
   },
+  beforeCreate: function() {
+    console.log("component beforeBreate");
+  },
+  // created: function() {
+  //   console.log("vm created");
+  // },
+  beforeMount: function() {
+    console.log("component beforMount");
+  },
+  mounted: function() {
+    console.log("component mounted");
+  },
+  beforeUpdate: function() {
+    console.log("component beforeUpdate");
+  },
+  updated: function() {
+    console.log("component updated");
+  },
+  beforeDestroy: function() {
+    console.log("component beforeDestroy");
+  },
+  destroyed: function() {
+    console.log("component destroyed");
+  }
 
 }
 </script>

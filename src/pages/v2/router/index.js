@@ -12,6 +12,10 @@ const routes = [
     path: "/",
     component: resolve => require(["../modules/default/index.vue"], resolve)
   },
+  {
+    path: "/vuex",
+    component: resolve => require(["../modules/default/vuex.vue"], resolve)
+  },
   { path: "*", component: NotFoundComponent }
 ];
 

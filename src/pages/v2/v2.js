@@ -75,13 +75,13 @@ new Vue({
   components: {
     App
   },
-  beforeBreate: function() {
+  beforeCreate: function() {
     console.log("vm beforeBreate");
   },
   created: function() {
     console.log("vm created");
   },
-  beforMount: function() {
+  beforeMount: function() {
     console.log("vm beforMount");
   },
   mounted: function() {
