@@ -16,6 +16,10 @@ const routes = [
     path: "/vuex",
     component: resolve => require(["../modules/default/vuex.vue"], resolve)
   },
+  {
+    path: "/compress",
+    component: resolve => require(["../modules/default/compress.vue"], resolve)
+  },
   { path: "*", component: NotFoundComponent }
 ];
 

@@ -32,6 +32,9 @@ module.exports = {
     },
     // add your custom rules here
     rules: {
+        "no-constant-condition":0,
+        "one-var-declaration-per-line":0,
+        "no-bitwise":0,
         "arrow-parens": [2, "as-needed", { "requireForBlockBody": true }],
         "new-cap": 0,
         "vue/require-valid-default-prop": 0,
