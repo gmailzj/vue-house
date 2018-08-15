@@ -2,7 +2,10 @@
   <div>
     <input id="file" type="file" @change="onFileChange">
     <div>
-      <img id="img">
+      <div id="userAgent"> </div>
+      <div id="srcSize"> </div>
+      <div id="distSize"> </div>
+      <img id="img" style="width:200px;">
     </div>
   </div>
 </template>
@@ -19,7 +22,8 @@ export default {
   methods: {
     onFileChange(e) {
       var file = e.target.files[0];
-      console.log(file);
+      console.log(file, file.size);
+      document.getElementById("srcSize").innerText = file.size;
       this.compressPicture(file, function(p) {
         console.log(p);
       })
@@ -56,6 +60,7 @@ export default {
         } else {
           // console.log(reader.result);
           console.log(reader.result.length, reader.result.byteLength);
+          document.getElementById("distSize").innerText = reader.result.length;
           // var data = getBinarySendData(reader.result);
           var data = reader.result;
           document.getElementById('img').src = data;
@@ -70,6 +75,9 @@ export default {
         reader.readAsDataURL(file);
       })
     },
+  },
+  mounted() {
+    document.getElementById("userAgent").innerText = navigator.userAgent;
   }
 }
 </script>
