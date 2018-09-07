@@ -25,7 +25,9 @@ export default {
       this.message = this.message.split('').reverse().join('')
     },
     increment() {
-      this.$store.commit('increment')
+      // 下面两种办法都可以
+      this.$store.dispatch("test");
+      // this.$store.commit('increment')
     },
     decrement() {
       this.$store.commit('decrement')

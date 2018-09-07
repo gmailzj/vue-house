@@ -23,13 +23,24 @@ const store = new Vuex.Store({
         count: 0
     },
     mutations: {
-        increment(state) {
-          state.count++;
+        increment(state, num) {
+          state.count++
         },
-        decrement(state) {
+        decrement(state, num) {
           state.count--
+        }
+    },
+    actions:{
+      test({
+        commit,
+        state
+      }) {
+        commit('increment')
       }
-    }
+    },
+    // todo
+    plugins: [vuexLocal.plugin]
+
 });
 
 
