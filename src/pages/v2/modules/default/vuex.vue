@@ -9,15 +9,21 @@
     <p>
       <button @click="increment">+</button>
       <button @click="decrement">-</button>
+      <button @click="loadData">loadData</button>
     </p>
+    <p>{{ content }}</p>
   </div>
 </template>
 <script>
+
+import model from "@/model/admin";
+
 export default {
   data() {
     return {
-      title: "title",
+      title: "vuex demo",
       message: '页面加载于 ' + new Date().toLocaleString(),
+      content:null
     }
   },
   methods: {
@@ -25,12 +31,32 @@ export default {
       this.message = this.message.split('').reverse().join('')
     },
     increment() {
-      // 下面两种办法都可以
-      this.$store.dispatch("test");
-      // this.$store.commit('increment')
+      // this.$store.dispatch('increment')
+
+      // 以载荷形式分发
+      this.$store.dispatch('incrementAsync', {
+        amount: 1
+      })
     },
     decrement() {
-      this.$store.commit('decrement')
+      // this.$store.commit('decrement')
+      // 以对象形式分发
+      this.$store.dispatch({
+        type: 'decrement',
+        amount: 1
+      })
+    },
+    loadData() {
+      let id = 1;
+      var vm = this;
+      model.getItem(null, id)
+        .then((ret) => {
+          console.log(ret.data);
+          vm.content = ret.data.data.title;
+        })
+        .catch((err) => {
+          console.log('error', err)
+        })
     }
   },
   computed: {
@@ -42,27 +68,27 @@ export default {
     console.log("component2 created");
     this.$store.commit('increment');
   },
-  beforeCreate: function() {
+  beforeCreate: function () {
     console.log("component2 beforeBreate");
   },
   // created: function() {
   // },
-  beforeMount: function() {
+  beforeMount: function () {
     console.log("component2 beforMount");
   },
-  mounted: function() {
+  mounted: function () {
     console.log("component2 mounted");
   },
-  beforeUpdate: function() {
+  beforeUpdate: function () {
     console.log("component2 beforeUpdate");
   },
-  updated: function() {
+  updated: function () {
     console.log("component2 updated");
   },
-  beforeDestroy: function() {
+  beforeDestroy: function () {
     console.log("component2 beforeDestroy");
   },
-  destroyed: function() {
+  destroyed: function () {
     console.log("component2 destroyed");
   }
 
