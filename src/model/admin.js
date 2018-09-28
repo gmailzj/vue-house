@@ -18,9 +18,25 @@ function getItem(data, uid) {
   });
 }
 
+function getUserinfo(data) {
+  return axios({
+    url: "userinfo/",
+    method: "GET",
+    params: data
+  });
+}
+function login(data) {
+  return axios({
+    url: "login/",
+    method: "GET",
+    params: data
+  });
+}
 
 // e.getList = getList;
 e.getItem = getItem;
+e.getUserinfo = getUserinfo;
+e.login = login;
 
 
 export default e;

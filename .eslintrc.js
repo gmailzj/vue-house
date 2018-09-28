@@ -32,6 +32,7 @@ module.exports = {
     },
     // add your custom rules here
     rules: {
+        "no-else-return":0,
         "spaced-comment":0,
         "no-nested-ternary":0,
         "arrow-parens":0,

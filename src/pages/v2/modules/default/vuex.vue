@@ -10,12 +10,16 @@
       <button @click="increment">+</button>
       <button @click="decrement">-</button>
       <button @click="loadData">loadData</button>
+      <button @click="login">login</button>
     </p>
     <p>{{ content }}</p>
+    <p>用户：</p>
+    <p>{{userInfo.id}}</p>
+    <p>{{userInfo.nickname}}</p>
   </div>
 </template>
 <script>
-
+import { mapGetters } from "vuex";
 import model from "@/model/admin";
 
 export default {
@@ -23,7 +27,7 @@ export default {
     return {
       title: "vuex demo",
       message: '页面加载于 ' + new Date().toLocaleString(),
-      content:null
+      content: null
     }
   },
   methods: {
@@ -47,6 +51,7 @@ export default {
       })
     },
     loadData() {
+      console.log(this.userInfo);
       let id = 1;
       var vm = this;
       model.getItem(null, id)
@@ -57,12 +62,35 @@ export default {
         .catch((err) => {
           console.log('error', err)
         })
+    },
+    login() {
+      model.login(null)
+        .then((ret) => {
+          console.log(ret.data);
+          this.$store.commit("SET_TOKEN", ret.data.data.token);
+        })
+        .catch((err) => {
+          console.log('error', err)
+        })
     }
   },
   computed: {
+    ...mapGetters(["userInfo"]),
     count() {
       return this.$store.state.count;
     }
+  },
+  mounted: function () {
+    console.log(this.$store.state.userInfo);
+    if (!this.$store.state.userInfo) {
+      // this.$store.dispatch("getUserInfo")
+      this.$store.dispatch("getUserInfo").then((ret) => {
+        console.log("ret:", ret);
+        console.log('getUserInfo dispatch');
+      });
+    }
+
+    console.log("component2 mounted");
   },
   created() {
     console.log("component2 created");
@@ -76,9 +104,7 @@ export default {
   beforeMount: function () {
     console.log("component2 beforMount");
   },
-  mounted: function () {
-    console.log("component2 mounted");
-  },
+
   beforeUpdate: function () {
     console.log("component2 beforeUpdate");
   },

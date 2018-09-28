@@ -2,6 +2,7 @@ import Vue from "vue";
 import Vuex from "vuex";
 import Cookies from "js-cookie";
 import VuexPersistence from "vuex-persist";
+import model from "@/model/admin";
 
 Vue.use(Vuex);
 
@@ -21,7 +22,8 @@ const vuexLocal = new VuexPersistence({
 const store = new Vuex.Store({
     state: {
         count: 0,
-        region:null
+        region:null,
+        userInfo:null
     },
     mutations: {
         increment(state) {
@@ -30,9 +32,15 @@ const store = new Vuex.Store({
         decrement(state) {
           state.count--
         },
-        setRegion(state, payload) {
-          state.region = payload;
-        }
+        SET_USER_INFO(state, payload) {
+          state.userInfo = payload
+        },
+        SET_REGION(state, payload) {
+          state.region = payload
+        },
+        SET_TOKEN(state, payload) {
+          state.token = payload
+        },
 
     },
     actions:{
@@ -66,11 +74,24 @@ const store = new Vuex.Store({
             commit('SET_REGION', 'cn')
         }
       },
+      getUserInfo({
+        commit,
+        state
+      }) {
+          return model.getUserinfo(null).then((ret) => {
+            console.log("getUserInfo actions")
+            console.log(ret.data);
+            commit('SET_USER_INFO', ret.data.data)
+          })
+      }
     },
     getters: {
       region(state) {
         return state.region || null
-      }
+      },
+      userInfo(state) {
+        return state.userInfo || {}
+      },
     },
     // todo
     plugins: [vuexLocal.plugin]
