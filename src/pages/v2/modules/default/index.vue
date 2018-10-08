@@ -111,7 +111,7 @@ export default {
   created() {
     console.log("component created");
     console.log(this.$store.state.count)
-    this.$store.commit('increment');
+    // this.$store.commit('increment');
     console.log(this.$store.state.count)
   },
   beforeCreate: function() {

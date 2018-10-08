@@ -16,6 +16,9 @@
     <p>用户：</p>
     <p>{{userInfo.id}}</p>
     <p>{{userInfo.nickname}}</p>
+    <br/>
+    <p>token:</p>
+    <p>{{userInfo.id}}</p>
   </div>
 </template>
 <script>
@@ -25,7 +28,7 @@ import model from "@/model/admin";
 export default {
   data() {
     return {
-      title: "vuex demo",
+      title: "vuex",
       message: '页面加载于 ' + new Date().toLocaleString(),
       content: null
     }
