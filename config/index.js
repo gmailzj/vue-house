@@ -19,7 +19,7 @@ module.exports = {
       // },
 
       "/api": {
-        target: "http://192.168.0.184:7300/mock/5b98bbe52c67a33677e1911b/api/",
+        target: "http://127.0.0.1:7300/mock/5b98bbe52c67a33677e1911b/api/",
         changeOrigin: true,
         pathRewrite: {
           "/api": ""

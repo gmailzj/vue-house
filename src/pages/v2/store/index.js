@@ -18,12 +18,45 @@ const vuexLocal = new VuexPersistence({
         mutation.type === "SET_TOKEN" || mutation.type === "LOGOUT"
 });
 
+const moduleA = {
+  state: { count: 0 },
+  mutations: {
+    increment (state) {
+      // 这里的 `state` 对象是模块的局部状态
+      state.count++
+    }
+  },
+
+  getters: {
+    doubleCount (state) {
+      return state.count * 2
+    },
+    sumWithRootCount (state, getters, rootState) {
+      return state.count + rootState.count
+    }
+  },
+  actions: {
+    incrementIfOddOnRootSum ({ state, commit, rootState }) {
+      if ((state.count + rootState.count) % 2 === 1) {
+        commit('increment')
+      }
+    }
+  }
+}
+
 // 如果在模块化构建系统中，请确保在开头调用了 Vue.use(Vuex)
 const store = new Vuex.Store({
+    modules: {
+      a:moduleA,
+    },
     state: {
         count: 0,
         region:null,
-        userInfo:null
+        userInfo:null,
+        todos: [
+          { id: 1, text: '...', done: true },
+          { id: 2, text: '...', done: false }
+        ]
     },
     mutations: {
         increment(state) {
@@ -92,6 +125,11 @@ const store = new Vuex.Store({
       userInfo(state) {
         return state.userInfo || {}
       },
+      doneTodos: state => state.todos.filter(todo => todo.done),
+      doneTodosCount: function(state, getters) {
+        console.log(state, getters.doneTodos);
+        return getters.doneTodos.length;
+      }
     },
     // todo
     plugins: [vuexLocal.plugin]

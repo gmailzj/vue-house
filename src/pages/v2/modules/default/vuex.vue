@@ -5,12 +5,16 @@
 
     <p>{{ message }}</p>
     <input v-model="message">
+    <p>state.count:</p>
     <p>{{ count }}</p>
+    <p>subCount:</p>
+    <p>{{ subCount }} {{sumWithRootCount}}</p>
     <p>
       <button @click="increment">+</button>
       <button @click="decrement">-</button>
       <button @click="loadData">loadData</button>
       <button @click="login">login</button>
+      <button @click="modules">modules</button>
     </p>
     <p>{{ content }}</p>
     <p>用户：</p>
@@ -19,6 +23,10 @@
     <br/>
     <p>token:</p>
     <p>{{userInfo.id}}</p>
+    <p>doneTodos:</p>
+    <p>{{doneTodos}}</p>
+    <p>doneTodosCount:</p>
+    <p>{{doneTodosCount}}</p>
   </div>
 </template>
 <script>
@@ -75,12 +83,21 @@ export default {
         .catch((err) => {
           console.log('error', err)
         })
+    },
+    modules() {
+      console.log('clicked');
+      console.log(this.$store.state)
+      console.log(this.$store.state.a)
+      // this.$store.dispatch('increment')
     }
   },
   computed: {
-    ...mapGetters(["userInfo"]),
+    ...mapGetters(["userInfo", "doneTodos", "doneTodosCount", "sumWithRootCount"]),
     count() {
       return this.$store.state.count;
+    },
+    subCount() {
+      return this.$store.state.a.count;
     }
   },
   mounted: function () {
