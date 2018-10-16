@@ -52,6 +52,7 @@ export default {
       this.$store.dispatch('incrementAsync', {
         amount: 1
       })
+      this.$store.dispatch('moduleA/increment')
     },
     decrement() {
       // this.$store.commit('decrement')
@@ -92,12 +93,12 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(["userInfo", "doneTodos", "doneTodosCount", "sumWithRootCount"]),
+    ...mapGetters(["userInfo", "doneTodos", "doneTodosCount", "moduleA/sumWithRootCount"]),
     count() {
       return this.$store.state.count;
     },
     subCount() {
-      return this.$store.state.a.count;
+      return this.$store.state.moduleA.count;
     }
   },
   mounted: function () {
@@ -114,7 +115,7 @@ export default {
   },
   created() {
     console.log("component2 created");
-    this.$store.commit('increment');
+    // this.$store.commit('increment');
   },
   beforeCreate: function () {
     console.log("component2 beforeBreate");

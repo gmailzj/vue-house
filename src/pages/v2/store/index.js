@@ -19,6 +19,7 @@ const vuexLocal = new VuexPersistence({
 });
 
 const moduleA = {
+  namespaced: true,
   state: { count: 0 },
   mutations: {
     increment (state) {
@@ -40,14 +41,20 @@ const moduleA = {
       if ((state.count + rootState.count) % 2 === 1) {
         commit('increment')
       }
-    }
+    },
+    increment (context) {
+      context.commit('increment')
+    },
+    decrement (context) {
+      context.commit('decrement')
+    },
   }
 }
 
 // 如果在模块化构建系统中，请确保在开头调用了 Vue.use(Vuex)
 const store = new Vuex.Store({
     modules: {
-      a:moduleA,
+      moduleA,
     },
     state: {
         count: 0,
