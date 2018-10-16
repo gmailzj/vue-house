@@ -7,8 +7,8 @@
     <input v-model="message">
     <p>state.count:</p>
     <p>{{ count }}</p>
-    <p>subCount:</p>
-    <p>{{ subCount }} {{sumWithRootCount}}</p>
+    <p>subCount: {{sumWithRootCount}}</p>
+    <p>{{ subCount }} ---  {{sumWithRootCountComputed}}</p>
     <p>
       <button @click="increment">+</button>
       <button @click="decrement">-</button>
@@ -93,12 +93,18 @@ export default {
     }
   },
   computed: {
+    // 数组形式
     ...mapGetters(["userInfo", "doneTodos", "doneTodosCount", "moduleA/sumWithRootCount"]),
+    // 如果你想将一个 getter 属性另取一个名字，使用对象形式
+    ...mapGetters({ sumWithRootCount: "moduleA/sumWithRootCount" }),
     count() {
       return this.$store.state.count;
     },
     subCount() {
       return this.$store.state.moduleA.count;
+    },
+    sumWithRootCountComputed() {
+      return this['moduleA/sumWithRootCount'];
     }
   },
   mounted: function () {

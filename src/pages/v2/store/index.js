@@ -48,6 +48,12 @@ const moduleA = {
     decrement (context) {
       context.commit('decrement')
     },
+    // 在这个模块中， dispatch 和 commit 也被局部化了
+    // 他们可以接受 `root` 属性以访问根 dispatch 或 commit
+    someAction ({ dispatch, commit, getters, rootGetters }) {
+      commit('someMutation') // -> 'moduleA/someMutation'
+      commit('someMutation', null, { root: true }) // -> 'someMutation'
+    }
   }
 }
 
@@ -66,8 +72,12 @@ const store = new Vuex.Store({
         ]
     },
     mutations: {
-        increment(state) {
-          state.count++
+        increment(state, payload) {
+          // state.count++
+          if (payload === undefined) {
+            payload = 1;
+          }
+          state.count += payload;
         },
         decrement(state) {
           state.count--
