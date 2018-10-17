@@ -8,15 +8,43 @@ Vue.use(Vuex);
 
 const vuexLocal = new VuexPersistence({
     key: "xxx-vuex",
+    // localStorage, sessionStorage, localforage or your custom Storage object,
+    // Must implement getItem, setItem, clear etc. Default: window.localStorage
+    // storage:window.localStorage,
+    /*
+      If not using storage, this custom function handles
+      retrieving state from storage
+    */
     restoreState: (key, storage) => Cookies.getJSON(key),
+
+    // If not using storage, this custom function handles
+    // saving state to persistence
     saveState: (key, state, storage) =>
         Cookies.set(key, state, {
             expires: 3
         }),
+    /*
+      State reducer. reduces state to only those values you want to save.
+      By default, saves entire state
+    */
     reducer: state => ({ token: state.token }),
+
+    // Mutation filter. Look at mutation.type and return true
+    // for only those ones which you want a persistence write to be triggered for.
+    // Default returns true for all mutations
     filter: mutation =>
         mutation.type === "SET_TOKEN" || mutation.type === "LOGOUT"
 });
+
+const myPlugin = (store) => {
+  // 当 store 初始化后调用
+  store.subscribe((mutation, state) => {
+    // 每次 mutation 之后都会调用
+    // 比如 {type: "increment", payload: undefined}
+    // mutation 的格式为 { type, payload }
+    console.log(mutation);
+  })
+}
 
 const moduleA = {
   namespaced: true,
@@ -149,7 +177,7 @@ const store = new Vuex.Store({
       }
     },
     // todo
-    plugins: [vuexLocal.plugin]
+    plugins: [vuexLocal.plugin, myPlugin]
 
 });
 
