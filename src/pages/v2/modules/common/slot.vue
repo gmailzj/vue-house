@@ -1,7 +1,17 @@
 <template>
   <div :class="alertClasses" v-show="show">
+    <!-- 必须包含一个 <slot> 元素，则任何传入它的内容都会被抛弃。 -->
+    <header>
+    <!-- <slot> 元素有一个特殊的特性：name -->
+    <slot name="header"></slot>
+    </header>>
+
     <slot><strong>Default!</strong> Hello World~</slot>
     <span class="Alert__close" @click="show = false">x</span>
+
+    <footer>
+      <slot name="footer"></slot>
+    </footer>
   </div>
 </template>
 
