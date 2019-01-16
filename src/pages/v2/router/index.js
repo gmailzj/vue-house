@@ -20,6 +20,10 @@ const routes = [
     path: "/compress",
     component: resolve => require(["../modules/default/compress.vue"], resolve)
   },
+  {
+    path: "/slot",
+    component: resolve => require(["../modules/default/slot.vue"], resolve)
+  },
   { path: "*", component: NotFoundComponent }
 ];
 

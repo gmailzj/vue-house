@@ -2,6 +2,7 @@
   <div>
 
     <router-link to="vuex">vuex</router-link>
+    <router-link to="slot">slot</router-link>
     <button-counter></button-counter>
 
     <p>{{ count }}</p>
