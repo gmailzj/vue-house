@@ -24,6 +24,10 @@ const routes = [
     path: "/slot",
     component: resolve => require(["../modules/default/slot.vue"], resolve)
   },
+  {
+    path: "/css",
+    component: resolve => require(["../modules/default/css.vue"], resolve)
+  },
   { path: "*", component: NotFoundComponent }
 ];
 

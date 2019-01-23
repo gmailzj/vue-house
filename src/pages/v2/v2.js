@@ -53,6 +53,10 @@ Vue.component("button-counter", {
   template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
 });
 
+Vue.component('my-component', {
+  template: '<p class="foo bar">Hi</p>'
+})
+
 // 定义全局组件
 Vue.component("mycomponent", {
   template: `<div>这是一个自定义组件</div>`,
