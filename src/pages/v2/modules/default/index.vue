@@ -6,6 +6,14 @@
     <router-link to="css">css</router-link>
     <button-counter></button-counter>
 
+    <div id="emit-example-argument">
+      <magic-eight-ball v-on:give-advice="showAdvice"></magic-eight-ball>
+    </div>
+
+    <div id="emit-example-simple">
+      <welcome-button v-on:welcome="sayHi"></welcome-button>
+    </div>
+
     <p>{{ count }}</p>
     <!-- 绑定一个属性 -->
     <div v-bind:title="title"></div>
@@ -101,6 +109,12 @@ export default {
     }
   },
   methods: {
+    showAdvice: function (advice) {
+      alert(advice)
+    },
+    sayHi: function () {
+      alert('Hi!')
+    },
     reverseMessage: function () {
       this.message = this.message.split('').reverse().join('')
     }
@@ -115,6 +129,7 @@ export default {
     console.log(this.$store.state.count)
     // this.$store.commit('increment');
     console.log(this.$store.state.count)
+    // 创建并挂载到 #app (会替换 #app)
   },
   beforeCreate: function() {
     console.log("component beforeBreate");
@@ -127,6 +142,11 @@ export default {
   },
   mounted: function() {
     console.log("component mounted");
+    var vm = this;
+    vm.$on("done", function() {
+      console.log("done")
+    });
+    vm.$emit("done");
   },
   beforeUpdate: function() {
     console.log("component beforeUpdate");

@@ -6,6 +6,9 @@ import store from './store';
 // 设置为 false 以阻止 vue 在启动时生成生产提示。
 Vue.config.productionTip = false;
 
+// 取消 Vue 所有的日志与警告。 默认值：false
+// Vue.config.silent = true
+
 // 设置为 true 以在浏览器开发工具的性能/时间线面板中启用对组件初始化、编译、渲染和打补丁的性能追踪
 // 只适用于开发模式和支持 performance.mark API 的浏览器上
 Vue.config.performance = true;
@@ -14,6 +17,7 @@ Vue.config.errorHandler = function(err, vm, info) {
   // handle error
   // `info` 是 Vue 特定的错误信息，比如错误所在的生命周期钩子
   // 只在 2.2.0+ 可用
+  console.log(err, vm, info);
 };
 
 // 为 Vue 的运行时警告赋予一个自定义处理函数。注意这只会在开发者环境下生效，在生产环境下它会被忽略。
@@ -66,6 +70,33 @@ Vue.component("mycomponent", {
     };
   }
 });
+
+Vue.component('welcome-button', {
+  template: `
+    <button v-on:click="$emit('welcome')">
+      Click me to be welcomed
+    </button>
+  `
+})
+
+Vue.component('magic-eight-ball', {
+  data: function () {
+    return {
+      possibleAdvice: ['Yes', 'No', 'Maybe']
+    }
+  },
+  methods: {
+    giveAdvice: function () {
+      var randomAdviceIndex = Math.floor(Math.random() * this.possibleAdvice.length)
+      this.$emit('give-advice', this.possibleAdvice[randomAdviceIndex])
+    }
+  },
+  template: `
+    <button v-on:click="giveAdvice">
+      Click me for advice
+    </button>
+  `
+})
 
 /* eslint-disable no-new */
 // new Vue({ el: "#components-demo" });
